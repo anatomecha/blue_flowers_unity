@@ -30,6 +30,6 @@ public class GlitchFlower : MonoBehaviour {
         }
 
         // do something here when finished
-        Destroy(gameObject);
+        DestroyImmediate(gameObject, true);
     }
 }

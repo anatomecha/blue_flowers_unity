@@ -1233,7 +1233,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e081edaa36734c241b4d6c5d36e3a117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glitchFlower: {fileID: 190530, guid: 1cb7428ed4cd06b439c4625134f41ae2, type: 2}
+  flowers:
+  - {fileID: 190528, guid: 6462aa05fdbce694eb4df635356c57ef, type: 2}
+  - {fileID: 190530, guid: 1cb7428ed4cd06b439c4625134f41ae2, type: 2}
+  - {fileID: 195056, guid: 7d9d30e789f33bd4197a0556e5c35b17, type: 2}
 --- !u!1 &1019366806
 GameObject:
   m_ObjectHideFlags: 0

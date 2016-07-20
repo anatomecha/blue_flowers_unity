@@ -68,9 +68,10 @@ public class AffineTransformationFractal : MonoBehaviour {
 			totalInstanceCount += members.Count;
 		}
 
-		Destroy ( generator );
+        //DestroyImmediate ( generator, true );
+        //Destroy(generator);
 
-		if( combine_option ){
+        if ( combine_option ){
 			CombineMeshes();
 		}
 
