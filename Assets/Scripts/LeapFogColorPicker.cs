@@ -17,13 +17,17 @@ namespace Leap.Unity
             {
                 HandModel = gameObject.GetComponentInParent<HandModel>();
             }
+
+            print("color picker awake.");
+            camera.clearFlags = CameraClearFlags.SolidColor;
+            camera.backgroundColor = activeColor;
+            
         }
 
         void Start()
         {
             print("color picker start.");
-            camera.clearFlags = CameraClearFlags.SolidColor;
-            camera.backgroundColor = activeColor;
+            camera.clearFlags = CameraClearFlags.Depth;
         }
 
         void OnEnable()
