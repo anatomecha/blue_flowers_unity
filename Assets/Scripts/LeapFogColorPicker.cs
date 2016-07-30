@@ -7,6 +7,7 @@ namespace Leap.Unity
     public class LeapFogColorPicker : MonoBehaviour
     {
         public Camera camera;
+        public GameObject fadePlane;
         Color activeColor = new Color(0, 0, 0);
 
         public HandModel HandModel = null;
@@ -57,6 +58,26 @@ namespace Leap.Unity
                 activeColor = new Color(p.x, p.y, p.z);
             }
             //SetBackgroundColor();
+        }
+
+        public void ResetBackground()
+        {
+            StopCoroutine("SetBackgroundColorCoroutine");
+            StopCoroutine("SetFogColorCoroutine");
+            StopCoroutine("ResetBackgroundCoroutine");
+            StartCoroutine("ResetBackgroundCoroutine");
+        }
+
+        IEnumerator ResetBackgroundCoroutine()
+        {
+            float startTime = Time.time;
+            fadePlane.SetActive(true);
+            while (startTime + 2.0f > Time.time)
+            {
+                //print("ResetBackgroundCoroutine");
+                yield return null;
+            }
+            fadePlane.SetActive(false);
         }
 
         public void SetBackgroundColor()

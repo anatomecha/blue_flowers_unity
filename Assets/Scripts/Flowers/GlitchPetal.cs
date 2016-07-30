@@ -9,28 +9,43 @@ public class GlitchPetal : MonoBehaviour {
     private Vector3 positionStep = new Vector3(0, 10, 0);
     private Vector3 rotationStep = new Vector3(5, 10, 5);
     private Vector3 scaleStep = new Vector3(0, 0.01f, 0);
+    [System.NonSerialized]
+    public float petalDuration = 0.5f;
+    
+    // offset values are assigned by GlitchFlower so that they can be set individually per petal in the Unity inspector
+    [System.NonSerialized]
+    public Vector3 translateOffset = new Vector3(0, 0, 0);
+    [System.NonSerialized]
+    public Vector3 rotateOffset = new Vector3(0, 0, 0);
+    [System.NonSerialized]
+    public Vector3 scaleOffset = new Vector3(1, 1, 1);
 
     //[System.NonSerialized]
 
-    // Use this for initialization
-    void OnEnable () {
-        StartCoroutine("GrowPetal", 0.5f);
+
+    void Start () {
+        print("spawning petal " + gameObject.name);
+        transform.localPosition = transform.localPosition + translateOffset;
+        transform.localEulerAngles = transform.localEulerAngles + rotateOffset;
+        transform.localScale = Vector3.Scale(transform.localScale, scaleOffset);
+        //print("rx=" + transform.localEulerAngles.x + " ry=" + transform.localEulerAngles.y + " rz=" + transform.localEulerAngles.z );
+        StartCoroutine("GrowPetal", petalDuration);
     }
 	
 
-    IEnumerator GrowPetal(float fadeTime)
+    IEnumerator GrowPetal(float durationInput)
     {
         float startTime = Time.time;
         float normalizedEelapsedTime = 0.0f;
 
-        //print("start time = " + startTime);
+        print("duration = " + durationInput);
 
         while (normalizedEelapsedTime <= 1.0)
         {
             float elapsedTime = (Time.time - startTime);
-            normalizedEelapsedTime = elapsedTime / fadeTime;
+            normalizedEelapsedTime = elapsedTime / durationInput;
 
-            AxiomStep();
+            AxiomStep( normalizedEelapsedTime );
 
             Color lerpedColor = Color.Lerp(activeColor, restColor, normalizedEelapsedTime);
             SetPetalColor(lerpedColor);
@@ -44,7 +59,7 @@ public class GlitchPetal : MonoBehaviour {
     }
 
     //override this shit!!
-    public virtual void AxiomStep()
+    public virtual void AxiomStep( float normalizedElapsedTime )
     {
         transform.Translate(positionStep * Time.deltaTime);
         transform.Rotate(rotationStep * Time.deltaTime * 10);
