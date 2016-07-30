@@ -1,0 +1,230 @@
+//Maya ASCII 2016 scene
+//Name: rose_leaf.ma
+//Last modified: Sat, Jul 30, 2016 01:36:35 AM
+//Codeset: 1252
+requires maya "2016";
+currentUnit -l centimeter -a degree -t ntsc;
+fileInfo "application" "maya";
+fileInfo "product" "Maya 2016";
+fileInfo "version" "2016";
+fileInfo "cutIdentifier" "201603180400-990260";
+fileInfo "osv" "Microsoft Windows 8 Home Premium Edition, 64-bit  (Build 9200)\n";
+createNode transform -s -n "persp";
+	rename -uid "E56003F5-4C91-89C5-82F2-288CC9CBA059";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 0.98493404588358835 0.12402410264564644 -0.088860627331375314 ;
+	setAttr ".r" -type "double3" -5.7383527126736329 4049.3999999892199 3.7965768165864739e-014 ;
+createNode camera -s -n "perspShape" -p "persp";
+	rename -uid "CCD04603-49AE-5685-310A-27AAE8FB3291";
+	setAttr -k off ".v" no;
+	setAttr ".fl" 34.999999999999993;
+	setAttr ".coi" 1.0237694539921109;
+	setAttr ".imn" -type "string" "persp";
+	setAttr ".den" -type "string" "persp_depth";
+	setAttr ".man" -type "string" "persp_mask";
+	setAttr ".tp" -type "double3" -0.13322893902659416 0.14221229776740074 0.031196771189570427 ;
+	setAttr ".hc" -type "string" "viewSet -p %camera";
+createNode transform -s -n "top";
+	rename -uid "38E99991-4DA6-D718-A014-F7AA37C574B5";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 0.022935108718850482 100.10325135531042 -0.02093304070253596 ;
+	setAttr ".r" -type "double3" -89.999999999999986 0 0 ;
+createNode camera -s -n "topShape" -p "top";
+	rename -uid "0E75818A-4583-8DC8-E6D1-1A9D25188691";
+	setAttr -k off ".v" no;
+	setAttr ".rnd" no;
+	setAttr ".coi" 100.1;
+	setAttr ".ow" 0.61623015794595792;
+	setAttr ".imn" -type "string" "top";
+	setAttr ".den" -type "string" "top_depth";
+	setAttr ".man" -type "string" "top_mask";
+	setAttr ".hc" -type "string" "viewSet -t %camera";
+	setAttr ".o" yes;
+createNode transform -s -n "front";
+	rename -uid "F91C286A-445E-C01D-13DC-B8B6C8D09AFF";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 0 -9.3132257461547852e-010 100.1 ;
+createNode camera -s -n "frontShape" -p "front";
+	rename -uid "3D9B10EB-49B0-9722-2369-50B56C31D989";
+	setAttr -k off ".v" no;
+	setAttr ".rnd" no;
+	setAttr ".coi" 100.1;
+	setAttr ".ow" 0.47703723847800211;
+	setAttr ".imn" -type "string" "front";
+	setAttr ".den" -type "string" "front_depth";
+	setAttr ".man" -type "string" "front_mask";
+	setAttr ".hc" -type "string" "viewSet -f %camera";
+	setAttr ".o" yes;
+createNode transform -s -n "side";
+	rename -uid "487B5312-43AB-0E6D-458D-65ACF013E722";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 100.10031302729251 -0.0051007126457989944 -0.25028412789104149 ;
+	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
+createNode camera -s -n "sideShape" -p "side";
+	rename -uid "588F0255-40FA-2C0A-3DF4-CABDA7DAD0C3";
+	setAttr -k off ".v" no;
+	setAttr ".rnd" no;
+	setAttr ".coi" 100.1;
+	setAttr ".ow" 0.74045258303628403;
+	setAttr ".imn" -type "string" "side";
+	setAttr ".den" -type "string" "side_depth";
+	setAttr ".man" -type "string" "side_mask";
+	setAttr ".hc" -type "string" "viewSet -s %camera";
+	setAttr ".o" yes;
+createNode transform -n "rose_leaf";
+	rename -uid "647A12D5-43D9-A40F-681E-2B87712EA16D";
+	setAttr ".t" -type "double3" 0 0 -0.5 ;
+	setAttr ".r" -type "double3" -8.9876962623474714 0 0 ;
+	setAttr ".rp" -type "double3" 0 -0.078111182258701423 0.49386095533677071 ;
+	setAttr ".rpt" -type "double3" 0 0.078111182258701409 0.0061390446632291484 ;
+	setAttr ".sp" -type "double3" 0 -0.078111182258701423 0.49386095533677071 ;
+createNode mesh -n "rose_leafShape" -p "rose_leaf";
+	rename -uid "BE0C9C03-4FFD-9502-8645-AAB0784F4A78";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.75 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 25 ".uvst[0].uvsp[0:24]" -type "float2" 0 0 0.25 0 0.5 0
+		 0.75 0 1 0 0 0.25 0.25 0.25 0.5 0.25 0.75 0.25 1 0.25 0 0.5 0.25 0.5 0.5 0.5 0.75
+		 0.5 1 0.5 0 0.75 0.25 0.75 0.5 0.75 0.75 0.75 1 0.75 0 1 0.25 1 0.5 1 0.75 1 1 1;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 25 ".pt[0:24]" -type "float3"  -0.0071214461 -0.080919974 
+		-0.0094015813 -0.003560723 -0.078773461 -0.0069954628 0 -0.078111179 -0.0061390446 
+		0.003560723 -0.078773461 -0.0069954628 0.0071214461 -0.080919974 -0.0094015813 -0.014111161 
+		-0.083125442 -0.022217408 -0.0070555797 -0.078773461 -0.022217408 0 -0.078111179 
+		-0.022217408 0.0070555797 -0.078773461 -0.022217408 0.014111159 -0.083125442 -0.022217408 
+		-0.017609451 -0.085518174 -0.038295761 -0.0088047255 -0.079829052 -0.038295761 0 
+		-0.07916677 -0.038295761 0.0088047255 -0.079829052 -0.038295761 0.017609451 -0.085518174 
+		-0.038295761 -0.015498061 -0.087433644 -0.055683833 -0.007749029 -0.081811473 -0.056554072 
+		-5.5525791e-019 -0.081156991 -0.056655366 0.007749029 -0.081811473 -0.056554072 0.015498058 
+		-0.087433644 -0.055683833 -0.011757895 -0.087282546 -0.067243077 -0.0058789477 -0.086845979 
+		-0.074801356 -5.5525569e-019 -0.086720474 -0.078837238 0.0058789477 -0.086845979 
+		-0.074801356 0.011757895 -0.087282546 -0.067243077;
+	setAttr -s 25 ".vt[0:24]"  -0.018199237 -0.0071780109 0.49166241 -0.0090996185 -0.001692487 0.49781138
+		 0 -2.3615489e-017 0.5 0.0090996185 -0.001692487 0.49781138 0.018199237 -0.0071780109 0.49166241
+		 -0.036061827 -0.012814209 0.45891088 -0.018030912 -0.001692487 0.45891088 0 -1.1807744e-017 0.45891088
+		 0.018030912 -0.001692487 0.45891088 0.036061823 -0.012814209 0.45891088 -0.045001894 -0.018928967 0.41782179
+		 -0.022500947 -0.0043901061 0.41782179 0 -0.0026976191 0.41782179 0.022500947 -0.0043901061 0.41782179
+		 0.045001894 -0.018928967 0.41782179 -0.039606124 -0.023824055 0.37338564 -0.019803058 -0.0094562899 0.3711617
+		 -1.4189913e-018 -0.0077837207 0.37090284 0.019803058 -0.0094562899 0.3711617 0.039606117 -0.023824055 0.37338564
+		 -0.030047931 -0.023437906 0.34384537 -0.015023965 -0.022322232 0.3245298 -1.4189856e-018 -0.02200151 0.31421587
+		 0.015023965 -0.022322232 0.3245298 0.030047931 -0.023437906 0.34384537;
+	setAttr -s 40 ".ed[0:39]"  0 1 0 0 5 0 1 2 0 1 6 1 2 3 0 2 7 1 3 4 0
+		 3 8 1 4 9 0 5 6 1 5 10 0 6 7 1 6 11 1 7 8 1 7 12 1 8 9 1 8 13 1 9 14 0 10 11 1 10 15 0
+		 11 12 1 11 16 1 12 13 1 12 17 1 13 14 1 13 18 1 14 19 0 15 16 1 15 20 0 16 17 1 16 21 1
+		 17 18 1 17 22 1 18 19 1 18 23 1 19 24 0 20 21 0 21 22 0 22 23 0 23 24 0;
+	setAttr -s 16 -ch 64 ".fc[0:15]" -type "polyFaces" 
+		f 4 0 3 -10 -2
+		mu 0 4 0 1 6 5
+		f 4 2 5 -12 -4
+		mu 0 4 1 2 7 6
+		f 4 4 7 -14 -6
+		mu 0 4 2 3 8 7
+		f 4 6 8 -16 -8
+		mu 0 4 3 4 9 8
+		f 4 9 12 -19 -11
+		mu 0 4 5 6 11 10
+		f 4 11 14 -21 -13
+		mu 0 4 6 7 12 11
+		f 4 13 16 -23 -15
+		mu 0 4 7 8 13 12
+		f 4 15 17 -25 -17
+		mu 0 4 8 9 14 13
+		f 4 18 21 -28 -20
+		mu 0 4 10 11 16 15
+		f 4 20 23 -30 -22
+		mu 0 4 11 12 17 16
+		f 4 22 25 -32 -24
+		mu 0 4 12 13 18 17
+		f 4 24 26 -34 -26
+		mu 0 4 13 14 19 18
+		f 4 27 30 -37 -29
+		mu 0 4 15 16 21 20
+		f 4 29 32 -38 -31
+		mu 0 4 16 17 22 21
+		f 4 31 34 -39 -33
+		mu 0 4 17 18 23 22
+		f 4 33 35 -40 -35
+		mu 0 4 18 19 24 23;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode lightLinker -s -n "lightLinker1";
+	rename -uid "D0AAE594-436E-7BFB-FFBE-E69D5E0BC0F3";
+	setAttr -s 3 ".lnk";
+	setAttr -s 3 ".slnk";
+createNode displayLayerManager -n "layerManager";
+	rename -uid "FAAC47FB-4AF0-556B-5952-9D9D57E8EAA5";
+	setAttr ".cdl" 1;
+	setAttr ".dli[1]"  1;
+createNode displayLayer -n "defaultLayer";
+	rename -uid "8A52C14A-401A-B5ED-DFE6-36B79B619453";
+createNode renderLayerManager -n "renderLayerManager";
+	rename -uid "238FCF9B-4213-3B8A-AB67-E9B4CABE5215";
+createNode renderLayer -n "defaultRenderLayer";
+	rename -uid "63B38358-4D78-7D16-274D-0C89C56C8A31";
+	setAttr ".g" yes;
+createNode script -n "sceneConfigurationScriptNode";
+	rename -uid "95CD507F-45AB-B4FF-66B7-89ACFCC16211";
+	setAttr ".b" -type "string" "playbackOptions -min 1 -max 30 -ast 1 -aet 60 ";
+	setAttr ".st" 6;
+createNode lambert -n "outline_material";
+	rename -uid "A791ED13-40D7-4296-9EB0-279919BAC1E3";
+createNode shadingEngine -n "lambert2SG";
+	rename -uid "8C75C9EE-4BCA-1E69-ED8E-588C349084D9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo1";
+	rename -uid "9B838893-4503-928B-6E59-5197F3F61689";
+select -ne :time1;
+	setAttr ".o" 19;
+	setAttr ".unw" 19;
+select -ne :hardwareRenderingGlobals;
+	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
+	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
+		 1 1 1 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 ;
+	setAttr ".fprt" yes;
+select -ne :renderPartition;
+	setAttr -s 3 ".st";
+select -ne :renderGlobalsList1;
+select -ne :defaultShaderList1;
+	setAttr -s 5 ".s";
+select -ne :postProcessList1;
+	setAttr -s 2 ".p";
+select -ne :defaultRenderingList1;
+select -ne :initialShadingGroup;
+	setAttr ".ro" yes;
+select -ne :initialParticleSE;
+	setAttr ".ro" yes;
+select -ne :defaultRenderGlobals;
+	setAttr ".fs" 1;
+	setAttr ".ef" 10;
+select -ne :defaultResolution;
+	setAttr ".pa" 1;
+select -ne :hardwareRenderGlobals;
+	setAttr ".ctrs" 256;
+	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
+relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
+connectAttr "layerManager.dli[0]" "defaultLayer.id";
+connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
+connectAttr "outline_material.oc" "lambert2SG.ss";
+connectAttr "lambert2SG.msg" "materialInfo1.sg";
+connectAttr "outline_material.msg" "materialInfo1.m";
+connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
+connectAttr "outline_material.msg" ":defaultShaderList1.s" -na;
+connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "rose_leafShape.iog" ":initialShadingGroup.dsm" -na;
+// End of rose_leaf.ma
