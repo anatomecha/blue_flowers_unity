@@ -20,8 +20,6 @@ public class GlitchFlowerManager : MonoBehaviour {
         // grow flower
         if(Input.GetKeyDown("space")) { GrowFlower(); }
 
-        
-
     }
 
     public void SwitchFlower( int index )
